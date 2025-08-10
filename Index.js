@@ -12,10 +12,7 @@ const auth = require('./Routes/Auth');
 app.use(express.json());
 app.use(cookieParser());
 // Allow requests from frontend origin
-app.use(cors({
-  origin: '*', // replace with your React app's URL
-  credentials: true               // allow cookies if needed
-}));
+app.use(cors());
   
 app.use('/auth',auth);
 app.use('/TodoNames',verifyToken,Troutes);
