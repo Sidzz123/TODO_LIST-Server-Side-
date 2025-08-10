@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 // Allow requests from frontend origin
 app.use(cors({
-  origin: 'http://localhost:3001', // replace with your React app's URL
+  origin: 'http://localhost:3000', // replace with your React app's URL
   credentials: true               // allow cookies if needed
 }));
   
