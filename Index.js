@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 // Allow requests from frontend origin
 app.use(cors({
-  origin: 'https://todo-list-client-side.vercel.app/', // replace with your React app's URL
+  origin: '*', // replace with your React app's URL
   credentials: true               // allow cookies if needed
 }));
   
