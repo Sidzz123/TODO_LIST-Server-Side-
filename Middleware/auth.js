@@ -1,10 +1,13 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = "dev_secret_key";
+require('dotenv').config();
+
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const verifyToken = (req, res, next) => {
   const token = req.cookies.token;
   console.log(token);
   if (!token) return res.status(401).json({ error: "Unauthorized" });
+  
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
     req.userId = decoded.id;
